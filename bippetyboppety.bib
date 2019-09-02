@@ -1,0 +1,39 @@
+@INPROCEEDINGS{lpcnet, 
+author={J. {Valin} and J. {Skoglund}}, 
+booktitle={ICASSP 2019 - 2019 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)}, 
+title={LPCNET: Improving Neural Speech Synthesis through Linear Prediction}, 
+year={2019}, 
+volume={}, 
+number={}, 
+pages={5891-5895}, 
+keywords={embedded systems;recurrent neural nets;speech synthesis;linear prediction;recurrent neural networks;high quality LPCNet speech synthesis;neural speech synthesis models;high quality speech;text-to-speech;compression applications;real-time operation;GPU;WaveRNN;LPCNet;Complexity theory;Speech synthesis;Sparse matrices;Logic gates;Predictive models;Neural networks;Cepstrum;neural audio synthesis;parametric coding;WaveRNN}, 
+doi={10.1109/ICASSP.2019.8682804}, 
+ISSN={2379-190X}, 
+month={May},}
+
+@InProceedings{pmlr-v80-kalchbrenner18a,
+  title = 	 {Efficient Neural Audio Synthesis},
+  author = 	 {Kalchbrenner, Nal and Elsen, Erich and Simonyan, Karen and Noury, Seb and Casagrande, Norman and Lockhart, Edward and Stimberg, Florian and van den Oord, Aaron and Dieleman, Sander and Kavukcuoglu, Koray},
+  booktitle = 	 {Proceedings of the 35th International Conference on Machine Learning},
+  pages = 	 {2410--2419},
+  year = 	 {2018},
+  editor = 	 {Dy, Jennifer and Krause, Andreas},
+  volume = 	 {80},
+  series = 	 {Proceedings of Machine Learning Research},
+  address = 	 {Stockholmsmässan, Stockholm Sweden},
+  month = 	 {10--15 Jul},
+  publisher = 	 {PMLR},
+  pdf = 	 {http://proceedings.mlr.press/v80/kalchbrenner18a/kalchbrenner18a.pdf},
+  url = 	 {http://proceedings.mlr.press/v80/kalchbrenner18a.html},
+  abstract = 	 {Sequential models achieve state-of-the-art results in audio, visual and textual domains with respect to both estimating the data distribution and generating desired samples. Efficient sampling for this class of models at the cost of little to no loss in quality has however remained an elusive problem. With a focus on text-to-speech synthesis, we describe a set of general techniques for reducing sampling time while maintaining high output quality. We first describe a single-layer recurrent neural network, the WaveRNN, with a dual softmax layer that matches the quality of the state-of-the-art WaveNet model. The compact form of the network makes it possible to generate 24 kHz 16-bit audio 4 times faster than real time on a GPU. Secondly, we apply a weight pruning technique to reduce the number of weights in the WaveRNN. We find that, for a constant number of parameters, large sparse networks perform better than small dense networks and this relationship holds past sparsity levels of more than 96\%. The small number of weights in a Sparse WaveRNN makes it possible to sample high-fidelity audio on a mobile phone CPU in real time. Finally, we describe a new dependency scheme for sampling that lets us trade a constant number of non-local, distant dependencies for the ability to generate samples in batches. The Batch WaveRNN produces 8 samples per step without loss of quality and offers orthogonal ways of further increasing sampling efficiency.}
+}
+
+@book{McClellan:2007:DF:1205272,
+ author = {McClellan, James H. and Schafer, Ronald W. and Yoder, Mark A.},
+ title = {DSP First (2Nd Edition)},
+ year = {2007},
+ isbn = {0131865269},
+ publisher = {Prentice-Hall, Inc.},
+ address = {Upper Saddle River, NJ, USA},
+} 
+[download]

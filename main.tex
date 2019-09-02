@@ -1,0 +1,65 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsfonts}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage[parfill]{parskip}
+\usepackage{amssymb}
+\usepackage{textcomp}
+\usepackage{natbib}
+
+
+\author{Jacob Josiah Webber}
+\title{A two page document describing lessons learned from the project, the  
+revised PhD vision and insights, and a plan of activities for the next  
+three months.}
+\begin{document}
+\maketitle
+\section{Introduction}
+
+The title of this document was given as the brief. This report is submitted to the progression panel along with a presentation and a Master's dissertation. Care is taken to avoid repeating material, particularly from the future work section of the dissertation.
+
+\section{Achievements so far}
+
+Work this year has led to a system that is capable of modifying the fundamental frequency (F0) of a speech signal. It has been argued that these techniques could apply to arbitrary control parameters other than F0.
+
+A listening test showed that the outputs from my system are not as good as those from World.
+
+\section{Lessons learned}
+
+One of the major problems in the development of this project was the dependency on an external vocoder. The Amazon Universal Vocoder was treated as a black box machine, where the task of my system was simply to create a specification for modified audio that the vocoder then converted into audio.
+
+This caused a number of issues
+
+\begin{enumerate}
+    \item The system was used pretrained. Higher performance could likely be achieved if it were possible to train the vocoder on artificial output from my system.
+    
+    \item Synthesis by the vocoder was extremely slow. As well as inconveniencing the evaluation process, this made the use of loss functions that depend on output audio, instead of just output spectral features, impractical.
+    
+    \item Implementing and training my own vocoder would have been a valuable learning experience. I made some progress with implementing my own version of WaveRNN, but did not finish this. Using Amazon's prebuilt vocoder saved time at the expense of gaining experience.
+\end{enumerate}
+
+Another valuable lesson was that for the techniques I was developing to work, it was necessary to use techniques that are similar to adversarial networks. Because the use of these techniques was motivated by gradual evolution of the project, rather than initial intent, my lack of knowledge of adversarial methods is becoming a hinderance. This is reflected in a fairly low quality analysis of the similarities between my work and GANs in section 4.3 of the dissertation.
+
+Most of all, the lesson taken from the project is that the proposed methods are both novel and viable. They will therefore form the bedrock of future work throughout the PhD.
+
+\section{A plan of activities for the next three months}
+
+To remove some of the issues discussed above, I will switch the vocoder to LPCNet as described in \cite{lpcnet}. This vocoder is much faster than real time at synthesis. LPCNet takes F0 related parameters as input (as well as bark cepstral coefficients), meaning that my networks should be able to trivially modify F0. To show serious merit, it will be necessary to use control parameters other than F0. I will try a range of these over the next few months. Spectral slope will be the first I try. This work will facilitate further research into loss functions and training as described in the further work section of my dissertation.
+
+In parallel, I will try to finish implementing my own vocoder. This will be based on the WaveRNN vocoder \citep{pmlr-v80-kalchbrenner18a}.
+
+During the next few months I will study on GAN methods and digital signal processing. I will write a report reviewing \emph{Signal Processing First} \citep{McClellan:2007:DF:1205272}. I will write a separate report into the state of the art in GANs. Subject to interest, I will run a GAN tutorial based on my findings at a meeting of the \emph{Speak!} reading group.
+
+I addition to this research and study work, I will also be helping to teach an introductory course in Python in the Linguistics School.
+
+\section{A grander vision}
+
+My dissertation describes how my long term goal is to use physical models of speech to inform the output of high quality neural-network-based speech synthesis systems.
+
+\bibliographystyle{abbrv}
+\bibliography{bippetyboppety}
+
+\end{document}
